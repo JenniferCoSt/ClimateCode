@@ -3,7 +3,7 @@ package com.JenniferCoSt.ClimateCode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity
+@Entity(name = "MeasurementParameters")
 public class MeasurementParameters {
 
     @Id

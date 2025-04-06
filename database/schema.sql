@@ -15,7 +15,7 @@ unit varchar(10) not null
 create table if not exists Stations(
 id int not null auto_increment primary key,
 stationName varchar(50),
-stationNumber int,
+stationCode int,
 location point not null srid 4326,
 dataSource varchar(30) not null,
 metersAboveSeaLevel float

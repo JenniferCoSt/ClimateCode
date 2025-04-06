@@ -1,27 +1,72 @@
 package com.JenniferCoSt.ClimateCode;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity(name = "Measurements")
+@Table(name = "Measurements")
 public class Measurements {
 
     @Id
+    @Column(
+            name = "id",
+            updatable = false
+    )
     private long id;
     //Station-objekt - ändra
+    @Column(
+            name = "stationId"
+    )
     private int stationId;
     //MeasurementParameter-objekt - ändra
+    @Column(
+            name = "measurementParameterId"
+    )
     private int measurementParameterId;
+
+    @Column(
+            name = "dataDate",
+            nullable = false
+    )
     private LocalDate dataDate;
+
+    @Column(
+            name = "dataValue",
+            nullable = false
+    )
     private float dataValue;
+
+    @Column(
+            name = "qualityCode"
+    )
     private String qualityCode;
+
+    @Column(
+            name = "measurementType",
+            nullable = false
+    )
     private String measurementType;
+
+    @Column(
+            name = "startTime"
+    )
     private LocalDateTime startTime;
+
+    @Column(
+            name = "endTime"
+    )
     private LocalDateTime endTime;
+
+    @Column(
+            name = "registered",
+            nullable = false
+    )
     private Instant registered;
 
     public Measurements() {}

@@ -1,17 +1,46 @@
 package com.JenniferCoSt.ClimateCode;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity(name = "Stations")
+@Table(name = "Stations")
 public class Stations {
 
     @Id
+    @Column(
+            name = "id",
+            updatable = false
+    )
     private long id;
+
+    @Column(
+            name = "stationName"
+    )
     private String stationName;
+
+    @Column(
+            name = "stationCode"
+    )
     private int stationCode;
+
+    @Column(
+            name = "location",
+            nullable = false
+    )
     private String location;
+
+    @Column(
+            name = "dataSource",
+            nullable = false
+    )
     private String dataSource;
+
+    @Column(
+            name = "metersAboveSeaLevel"
+    )
     private float metersAboveSeaLevel;
 
 

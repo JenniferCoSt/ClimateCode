@@ -1,14 +1,31 @@
 package com.JenniferCoSt.ClimateCode;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity(name = "MeasurementParameters")
+@Table(name = "MeasurementParameters")
 public class MeasurementParameters {
 
     @Id
+    @Column(
+            name = "id",
+            updatable = false
+    )
     private int id;
+
+    @Column(
+            name = "parameterType",
+            nullable = false
+    )
     private String parameterType;
+
+    @Column(
+            name = "unit",
+            nullable = false
+    )
     private String unit;
 
     public MeasurementParameters() {}

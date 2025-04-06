@@ -9,15 +9,15 @@ public class Stations {
     @Id
     private long id;
     private String stationName;
-    private String stationCode;
+    private int stationCode;
     private String location;
     private String dataSource;
-    private int metersAboveSeaLevel;
+    private float metersAboveSeaLevel;
 
 
     public Stations() {}
 
-    public Stations(int id, String stationName, String stationCode, String location, String dataSource, int metersAboveSeaLevel) {
+    public Stations(int id, String stationName, int stationCode, String location, String dataSource, float metersAboveSeaLevel) {
         this.id = id;
         this.stationName = stationName;
         this.stationCode = stationCode;
@@ -42,11 +42,11 @@ public class Stations {
         this.stationName = stationName;
     }
 
-    public String getStationCode() {
+    public int getStationCode() {
         return stationCode;
     }
 
-    public void setStationCode(String stationCode) {
+    public void setStationCode(int stationCode) {
         this.stationCode = stationCode;
     }
 
@@ -66,11 +66,11 @@ public class Stations {
         this.dataSource = dataSource;
     }
 
-    public int getMetersAboveSeaLevel() {
+    public float getMetersAboveSeaLevel() {
         return metersAboveSeaLevel;
     }
 
-    public void setMetersAboveSeaLevel(int metersAboveSeaLevel) {
+    public void setMetersAboveSeaLevel(float metersAboveSeaLevel) {
         this.metersAboveSeaLevel = metersAboveSeaLevel;
     }
 }

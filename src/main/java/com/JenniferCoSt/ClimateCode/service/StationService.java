@@ -1,6 +1,8 @@
 package com.JenniferCoSt.ClimateCode.service;
 
 import com.JenniferCoSt.ClimateCode.model.Station;
+import com.JenniferCoSt.ClimateCode.repository.StationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,13 +11,18 @@ import java.util.Stack;
 @Service
 public class StationService {
 
-    public List<Station> getAllStations() {
+    private final StationRepository stationRepository;
 
-        return List.of();
+    @Autowired
+    public StationService(StationRepository stationRepository) {
+        this.stationRepository = stationRepository;
+    }
+
+    public List<Station> getAllStations() {
+        return stationRepository.findAll();
     }
 
     public Station getStation() {
-
         return new Station();
     }
 }

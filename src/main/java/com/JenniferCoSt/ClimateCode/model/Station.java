@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity(name = "Stations")
 @Table(name = "Stations")
-public class Stations {
+public class Station {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,9 +42,9 @@ public class Stations {
     private float metersAboveSeaLevel;
 
 
-    public Stations() {}
+    public Station() {}
 
-    public Stations(String stationName, int stationCode, String location, String dataSource, float metersAboveSeaLevel) {
+    public Station(String stationName, int stationCode, String location, String dataSource, float metersAboveSeaLevel) {
         this.stationName = stationName;
         this.stationCode = stationCode;
         this.location = location;

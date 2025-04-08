@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity(name = "MeasurementParameters")
 @Table(name = "MeasurementParameters")
-public class MeasurementParameters {
+public class MeasurementParameter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +26,9 @@ public class MeasurementParameters {
     )
     private String unit;
 
-    public MeasurementParameters() {}
+    public MeasurementParameter() {}
 
-    public MeasurementParameters(String parameterType, String unit) {
+    public MeasurementParameter(String parameterType, String unit) {
         this.parameterType = parameterType;
         this.unit = unit;
     }

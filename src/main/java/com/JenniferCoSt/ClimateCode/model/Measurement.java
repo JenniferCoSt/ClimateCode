@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity(name = "Measurements")
 @Table(name = "Measurements")
-public class Measurements {
+public class Measurement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,9 +67,9 @@ public class Measurements {
     )
     private Instant registered;
 
-    public Measurements() {}
+    public Measurement() {}
 
-    public Measurements(int stationId, int measurementParameterId, LocalDate dataDate, float dataValue, String qualityCode, String measurementType, LocalDateTime startTime, LocalDateTime endTime, Instant registered) {
+    public Measurement(int stationId, int measurementParameterId, LocalDate dataDate, float dataValue, String qualityCode, String measurementType, LocalDateTime startTime, LocalDateTime endTime, Instant registered) {
         this.stationId = stationId;
         this.measurementParameterId = measurementParameterId;
         this.dataDate = dataDate;

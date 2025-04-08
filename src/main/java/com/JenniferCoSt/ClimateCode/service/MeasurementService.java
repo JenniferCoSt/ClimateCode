@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class MeasurementService {
 
-    public List<Measurement> getMeasurements() {
+    public List<Measurement> getAllMeasurements() {
 
         return List.of();
     }

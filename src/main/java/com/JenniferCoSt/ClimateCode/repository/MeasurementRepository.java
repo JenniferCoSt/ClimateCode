@@ -1,0 +1,4 @@
+package com.JenniferCoSt.ClimateCode.repository;
+
+public interface MeasurementRepository {
+}

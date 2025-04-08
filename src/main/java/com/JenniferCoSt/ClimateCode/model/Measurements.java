@@ -1,4 +1,4 @@
-package com.JenniferCoSt.ClimateCode;
+package com.JenniferCoSt.ClimateCode.model;
 
 import jakarta.persistence.*;
 

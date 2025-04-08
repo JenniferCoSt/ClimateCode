@@ -1,9 +1,6 @@
 package com.JenniferCoSt.ClimateCode;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -14,6 +11,7 @@ import java.time.LocalDateTime;
 public class Measurements {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
             name = "id",
             updatable = false
@@ -71,8 +69,7 @@ public class Measurements {
 
     public Measurements() {}
 
-    public Measurements(long id, int stationId, int measurementParameterId, LocalDate dataDate, float dataValue, String qualityCode, String measurementType, LocalDateTime startTime, LocalDateTime endTime, Instant registered) {
-        this.id = id;
+    public Measurements(int stationId, int measurementParameterId, LocalDate dataDate, float dataValue, String qualityCode, String measurementType, LocalDateTime startTime, LocalDateTime endTime, Instant registered) {
         this.stationId = stationId;
         this.measurementParameterId = measurementParameterId;
         this.dataDate = dataDate;
@@ -86,10 +83,6 @@ public class Measurements {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public int getStationId() {

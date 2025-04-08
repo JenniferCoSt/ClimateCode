@@ -1,15 +1,13 @@
 package com.JenniferCoSt.ClimateCode;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity(name = "Stations")
 @Table(name = "Stations")
 public class Stations {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
             name = "id",
             updatable = false
@@ -46,8 +44,7 @@ public class Stations {
 
     public Stations() {}
 
-    public Stations(int id, String stationName, int stationCode, String location, String dataSource, float metersAboveSeaLevel) {
-        this.id = id;
+    public Stations(String stationName, int stationCode, String location, String dataSource, float metersAboveSeaLevel) {
         this.stationName = stationName;
         this.stationCode = stationCode;
         this.location = location;
@@ -57,10 +54,6 @@ public class Stations {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getStationName() {

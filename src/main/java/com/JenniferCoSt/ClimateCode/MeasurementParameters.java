@@ -1,15 +1,13 @@
 package com.JenniferCoSt.ClimateCode;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity(name = "MeasurementParameters")
 @Table(name = "MeasurementParameters")
 public class MeasurementParameters {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
             name = "id",
             updatable = false
@@ -30,8 +28,7 @@ public class MeasurementParameters {
 
     public MeasurementParameters() {}
 
-    public MeasurementParameters(int id, String parameterType, String unit) {
-        this.id = id;
+    public MeasurementParameters(String parameterType, String unit) {
         this.parameterType = parameterType;
         this.unit = unit;
     }
@@ -54,9 +51,5 @@ public class MeasurementParameters {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

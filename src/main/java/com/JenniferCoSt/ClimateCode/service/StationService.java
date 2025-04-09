@@ -22,7 +22,7 @@ public class StationService {
         return stationRepository.findAll();
     }
 
-    public Station getStation() {
-        return new Station();
+    public Station getStation(long stationId) {
+        return stationRepository.getReferenceById(stationId);
     }
 }

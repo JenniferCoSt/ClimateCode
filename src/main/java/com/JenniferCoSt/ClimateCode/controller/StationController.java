@@ -4,6 +4,7 @@ import com.JenniferCoSt.ClimateCode.model.Station;
 import com.JenniferCoSt.ClimateCode.service.StationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,9 +28,8 @@ public class StationController {
     }
 
     @GetMapping("/{id}")
-    public Station getStation(Long id) {
-
-        return stationService.getStation();
+    public Station getStation(@PathVariable("id") Long stationId) {
+        return stationService.getStation(stationId);
     }
 
 }
